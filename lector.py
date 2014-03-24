@@ -6,8 +6,9 @@ class lector():
 	def __init__(self, path):
 		self.path = path
 
+	#Método que lee un archivo de texto y lo formatea en una matriz para trabajar con el
 	def lee(self):
-		f = open("holis.txt", "r")
+		f = open(self.path, "r")
 		x = f.readline()
 		x = x.rstrip("\n")
 		Ax = x.split(",")

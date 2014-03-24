@@ -7,7 +7,11 @@ from lector import *
 lector = lector("holis.txt") 
 
 #Creación de objeto newton
-FuncionNewton = newton(lector.lee)
+FuncionNewton = newton(lector.lee())
+
+#Llamada a metodo Diferencia infinitas
+
+FuncionNewton.DiferenciasFinitas()
 
 
 
