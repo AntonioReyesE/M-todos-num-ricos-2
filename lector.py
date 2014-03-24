@@ -11,10 +11,10 @@ class lector():
 		f = open(self.path, "r")
 		x = f.readline()
 		x = x.rstrip("\n")
-		Ax = x.split(",")
+		Ax = map(float,x.split(","))
 		y = f.readline()
 		y = y.rstrip("\n")
-		Ay = y.split(",")
+		Ay = map(float,y.split(","))
 		R = (Ax,Ay)
 		return R
 

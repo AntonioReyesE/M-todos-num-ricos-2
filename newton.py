@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+import math
 #Clase que implementa los métodos necesarios para solucionar por el método de Newton
 class newton:
 
@@ -40,7 +41,7 @@ class newton:
 		self.k = k
 		self.lista = lista
 
-	
+
 	#Función que identifica si todos los elementos de un arreglo son iguales
 	def iguales(self,resultado):
 		f = resultado[0]
@@ -48,7 +49,7 @@ class newton:
 			if resultado[x] != f:
 				return False	
 		return True
-	
+
 	#La primera función a llamar para hacer la validación principal
 	#Función que detecta si h es constante, y si lo es regresa la distancia, sino regresa -1
 	def intervalo(self):
@@ -64,7 +65,7 @@ class newton:
 				return -1
 		self.intervalo = resta
 		return resta
-	
+
 	#Función que calcula la k
 	def fraccionIntervalo(self,x0):
 		valor = float(self.matriz[0][0])
@@ -81,4 +82,20 @@ class newton:
 				valor = valor - self.intervalo
 			valor = valor + self.intervalo
 		fraccIn = (x0 - valor) / self.intervalo
+		self.xAnterior = valor
 		return fraccIn
+
+
+	def formula(self, xUsuario):
+		print self.lista
+		k = self.fraccionIntervalo(xUsuario)
+		indice = self.lista[0].index(self.xAnterior)
+		res = 1
+		for j in range(0, 3):
+			res = res * (k - j)
+		res = (res * self.lista[j+2][indice]) / math.factorial(j)
+		
+		print res
+			#y0 = y0 + res
+
+

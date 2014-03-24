@@ -13,7 +13,8 @@ FuncionNewton = newton(lector.lee())
 
 FuncionNewton.DiferenciasFinitas()
 FuncionNewton.intervalo()
-print FuncionNewton.fraccionIntervalo(-3.2)
+#FuncionNewton.fraccionIntervalo(-3.2)
+FuncionNewton.formula(3.2)
 
 
 
