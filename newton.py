@@ -1,3 +1,4 @@
+# -*- encoding: utf-8 -*-
 #Clase que implementa los métodos necesarios para solucionar por el método de Newton
 class newton:
 	#Matriz que recibe a partir de archivo leido
@@ -19,7 +20,9 @@ class newton:
 			resultado = [0]
 			#Suma de los valores de y
 			for x in xrange(0,len(y)):
-				suma = y[i++] + y[j++]
+				i=i+1
+				j=j+1
+				suma = y[i] + y[j]
 				resultado.append(suma)
 			igual = iguales(resultado)
 			y = resultado

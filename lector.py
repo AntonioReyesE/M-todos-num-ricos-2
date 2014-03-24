@@ -1,3 +1,4 @@
+# -*- encoding: utf-8 -*-
 #Clase encargada de leer y acomodar los valores del archivo de entrada
 class lector():
 	"""docstring for lector"""

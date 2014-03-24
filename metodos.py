@@ -1,3 +1,4 @@
+# -*- encoding: utf-8 -*-
 #Archivo principal main
 from newton import *
 from lector import *
