@@ -3,7 +3,10 @@
 class newton:
 
 	k = 0  #El orden 
-	lista = []
+	lista = [] #La lista que guarda los valores iniciales y los generados a partir de ellos
+	intervalo = 0 #La diferencia general entre los valores de x
+	xAnterior = 0 #La x0 de la formula de Newton
+
 
 	#Contructor de la clase que inicializa la matriz
 	def __init__(self, matriz):
@@ -27,9 +30,9 @@ class newton:
 			resultado = []
 			#resta de los valores de y
 			while j < len(y):
-				resta = int(y[j]) - int(y[i])
-				i=i+1
-				j=j+1
+				resta = float(y[j]) - float(y[i])
+				i = i + 1
+				j = j + 1
 				resultado.append(resta)
 			igual = self.iguales(resultado)
 			y = resultado
@@ -46,19 +49,36 @@ class newton:
 				return False	
 		return True
 	
+	#La primera función a llamar para hacer la validación principal
 	#Función que detecta si h es constante, y si lo es regresa la distancia, sino regresa -1
 	def intervalo(self):
 		i = 0
 		j = 1
-		resta = abs(abs(int(self.matriz[0][j])) - abs(int(self.matriz[0][i])))
+		resta = abs(abs(float(self.matriz[0][j])) - abs(float(self.matriz[0][i])))
 		while j < len(self.matriz[0]):
-			resta2 = abs(abs(int(self.matriz[0][j])) - abs(int(self.matriz[0][i])))
+			resta2 = abs(abs(float(self.matriz[0][j])) - abs(float(self.matriz[0][i])))
 			i = i + 1
 			j = j + 1
 			if(resta != resta2):
+				self.intervalo = -1
 				return -1
+		self.intervalo = resta
 		return resta
+	
 	#Función que calcula la k
 	def fraccionIntervalo(self,x0):
-		for i in range(0 ,self.matriz[0]):
-			pass
+		valor = float(self.matriz[0][0])
+		if valor == x0:
+			valor = x0
+		elif x0 % self.intervalo == 0:
+			valor = x0
+		elif x0 > valor:
+			while valor < x0:
+				valor = valor + self.intervalo
+			valor = valor - self.intervalo
+		elif x0 < valor:
+			while x0 < valor:
+				valor = valor - self.intervalo
+			valor = valor + self.intervalo
+		fraccIn = (x0 - valor) / self.intervalo
+		return fraccIn
