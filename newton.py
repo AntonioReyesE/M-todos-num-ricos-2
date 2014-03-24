@@ -45,4 +45,20 @@ class newton:
 			if resultado[x] != f:
 				return False	
 		return True
-		
+	
+	#Función que detecta si h es constante, y si lo es regresa la distancia, sino regresa -1
+	def intervalo(self):
+		i = 0
+		j = 1
+		resta = abs(abs(int(self.matriz[0][j])) - abs(int(self.matriz[0][i])))
+		while j < len(self.matriz[0]):
+			resta2 = abs(abs(int(self.matriz[0][j])) - abs(int(self.matriz[0][i])))
+			i = i + 1
+			j = j + 1
+			if(resta != resta2):
+				return -1
+		return resta
+	#Función que calcula la k
+	def fraccionIntervalo(self,x0):
+		for i in range(0 ,self.matriz[0]):
+			pass

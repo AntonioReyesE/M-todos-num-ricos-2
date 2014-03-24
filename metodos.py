@@ -12,6 +12,7 @@ FuncionNewton = newton(lector.lee())
 #Llamada a metodo Diferencia infinitas
 
 FuncionNewton.DiferenciasFinitas()
+FuncionNewton.intervalo()
 
 
 
