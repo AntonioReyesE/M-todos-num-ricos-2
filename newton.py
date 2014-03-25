@@ -85,23 +85,34 @@ class newton:
 		self.xAnterior = valor
 		return fraccIn
 
-
+	#Función que resuleve la interpolacion ya generada de newton
 	def formula(self, xUsuario):
-		print self.lista
 		k = self.fraccionIntervalo(xUsuario)
 		indice = self.lista[0].index(self.xAnterior)
 		res = 1
 		y0 = self.lista[1][indice]
 		for i in range (self.k,0,-1):
-			#print i
 			for j in range(0, i):
-				#print j
 				res = res * (k - j)
-		
 			res = (res * self.lista[j+2][indice]) / math.factorial(j+1)
 			y0 = y0 + res
 			res = 1
 		print y0
 
+	#Función que extrapola según un valor dado válido de acuerdo al intervalo
+	def  extrapolacion(self, xDeseado):
+		if xDeseado < self.lista[0][0]:
+			while not xDeseado in self.lista[0]:
+				self.lista[-1].insert(0,self.lista[-1][0])
+				for i in range(self.k, 0, -1):
+					self.lista[i].insert(0, self.lista[i][0] - self.lista[i + 1][0])
+				self.lista[0].insert(0, self.lista[0][0] - self.intervalo)
+		else:
+			while not xDeseado in self.lista[0]:
+				self.lista[-1].append(self.lista[-1][-1])
+				for i in range(self.k, 0, -1):
+					self.lista[i].append(self.lista[i][-1] + self.lista[i + 1][-1])
+				self.lista[0].append(self.lista[0][-1] + self.intervalo)
+		print self.lista
 			
 

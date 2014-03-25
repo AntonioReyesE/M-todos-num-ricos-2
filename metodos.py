@@ -14,7 +14,8 @@ FuncionNewton = newton(lector.lee())
 FuncionNewton.DiferenciasFinitas()
 FuncionNewton.intervalo()
 #FuncionNewton.fraccionIntervalo(-3.2)
-FuncionNewton.formula(5)
+#FuncionNewton.formula(5)
+FuncionNewton.extrapolacion(-2)
 
 
 
