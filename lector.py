@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 #Clase encargada de leer y acomodar los valores del archivo de entrada
-class lector():
+class Lector():
 	"""docstring for lector"""
 	path = ""
 	def __init__(self, path):
@@ -16,6 +16,7 @@ class lector():
 		y = y.rstrip("\n")
 		Ay = map(float,y.split(","))
 		R = (Ax,Ay)
+		f.close()
 		#print R
 		return R
 

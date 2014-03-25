@@ -88,12 +88,14 @@ class newton:
 		return fraccIn
 
 	#Función que resuleve la interpolacion ya generada de newton
-	def formula(self, xUsuario):
+	def formula(self, xUsuario, orden):
 		
 		k = self.fraccionIntervalo(xUsuario)
+		if(orden<self.k):
+			self.k = orden
+
 		self.extrapolacion(self.xAnterior) #aqui ta extrapolacion 
 		indice = self.lista[0].index(self.xAnterior)
-		print indice
 		res = 1
 		y0 = self.lista[1][indice]
 		for i in range (self.k,0,-1):
@@ -119,6 +121,8 @@ class newton:
 				for i in range(self.k, 0, -1):
 					self.lista[i].append(self.lista[i][-1] + self.lista[i + 1][-1])
 				self.lista[0].append(self.lista[0][-1] + self.intervalo)
-		print self.lista
+		#print self.lista
 			
 
+	def kill(self):
+		del self
