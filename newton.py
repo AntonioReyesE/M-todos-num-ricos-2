@@ -13,6 +13,8 @@ class newton:
 	def __init__(self, matriz):
 		#Matriz que recibe a partir de archivo leido
 		self.matriz = matriz
+		self.intervalo()
+		self.DiferenciasFinitas()
 
 	#Primera forma de calcular las diferencias finitas de la función tabular
 	#Regresa el orden de la función
@@ -66,7 +68,7 @@ class newton:
 		self.intervalo = resta
 		return resta
 
-	#Función que calcula la k
+	#Función que calcula la k y pone xAnterior
 	def fraccionIntervalo(self,x0):
 		valor = float(self.matriz[0][0])
 		if valor == x0:
@@ -87,8 +89,11 @@ class newton:
 
 	#Función que resuleve la interpolacion ya generada de newton
 	def formula(self, xUsuario):
+		
 		k = self.fraccionIntervalo(xUsuario)
+		self.extrapolacion(self.xAnterior) #aqui ta extrapolacion 
 		indice = self.lista[0].index(self.xAnterior)
+		print indice
 		res = 1
 		y0 = self.lista[1][indice]
 		for i in range (self.k,0,-1):
@@ -101,6 +106,7 @@ class newton:
 
 	#Función que extrapola según un valor dado válido de acuerdo al intervalo
 	def  extrapolacion(self, xDeseado):
+		xDeseado = (3 * self.intervalo) + xDeseado
 		if xDeseado < self.lista[0][0]:
 			while not xDeseado in self.lista[0]:
 				self.lista[-1].insert(0,self.lista[-1][0])

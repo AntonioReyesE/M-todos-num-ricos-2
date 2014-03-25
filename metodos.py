@@ -11,11 +11,11 @@ FuncionNewton = newton(lector.lee())
 
 #Llamada a metodo Diferencia infinitas
 
-FuncionNewton.DiferenciasFinitas()
-FuncionNewton.intervalo()
+#FuncionNewton.DiferenciasFinitas()
+#FuncionNewton.intervalo()
 #FuncionNewton.fraccionIntervalo(-3.2)
-#FuncionNewton.formula(5)
-FuncionNewton.extrapolacion(-2)
+FuncionNewton.formula(11)
+#FuncionNewton.extrapolacion(-2)
 
 
 
