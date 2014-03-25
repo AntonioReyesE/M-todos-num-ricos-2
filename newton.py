@@ -87,15 +87,21 @@ class newton:
 
 
 	def formula(self, xUsuario):
-		print self.lista
+		#print self.lista
 		k = self.fraccionIntervalo(xUsuario)
 		indice = self.lista[0].index(self.xAnterior)
 		res = 1
-		for j in range(0, 3):
-			res = res * (k - j)
-		res = (res * self.lista[j+2][indice]) / math.factorial(j)
+		y0 = self.lista[1][indice]
+		for i in range (self.k,0,-1):
+			#print i
+			for j in range(0, i):
+				#print j
+				res = res * (k - j)
 		
-		print res
-			#y0 = y0 + res
+			res = (res * self.lista[j+2][indice]) / math.factorial(j+1)
+			y0 = y0 + res
+			res = 1
+		print y0
 
+			
 
