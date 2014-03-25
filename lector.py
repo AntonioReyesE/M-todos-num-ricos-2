@@ -16,5 +16,6 @@ class lector():
 		y = y.rstrip("\n")
 		Ay = map(float,y.split(","))
 		R = (Ax,Ay)
+		#print R
 		return R
 

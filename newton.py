@@ -87,7 +87,7 @@ class newton:
 
 
 	def formula(self, xUsuario):
-		#print self.lista
+		print self.lista
 		k = self.fraccionIntervalo(xUsuario)
 		indice = self.lista[0].index(self.xAnterior)
 		res = 1
