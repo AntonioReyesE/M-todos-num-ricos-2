@@ -2,6 +2,7 @@
 #Archivo principal main
 from newton import *
 from Lector import *
+from Lagrange import *
 
 menu = True;
 print ' Hola, favor de introducir los comandos que desee:'
@@ -14,6 +15,7 @@ print ""
 lector = Lector("holis.txt") 
 #Creación de objeto newton
 FuncionNewton = newton(lector.lee())
+FuncionLagrange = Lagrange(lector.lee())
 #validar entrada para ver si se puede ejecutar newton
 
 #print str(validarNewton)
