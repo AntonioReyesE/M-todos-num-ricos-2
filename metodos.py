@@ -25,15 +25,17 @@ while menu:
 	if opcion == '1':
 		print "exacto"
 	elif opcion == '2':
-		
-		xusuario = raw_input("introduce el valor a aproximar: ") 
-		orden = int(raw_input("introduce el orden a aproximar (1,2,3...): "))
-		#validar orden que no sea negativo
-		while (orden<=0):
-			orden = int(raw_input("vuelve a introducir el orden a aproximar (1,2,3...): "))
-		print "orden escogido: " + str(orden)
-		FuncionNewton.formula(float(xusuario),orden)
-		FuncionNewton.kill()
+		if FuncionNewton.DiferenciasFinitas() == True:
+			xusuario = raw_input("introduce el valor a aproximar: ") 
+			orden = int(raw_input("introduce el orden a aproximar (1,2,3...): "))
+			#validar orden que no sea negativo
+			while (orden<=0):
+				orden = int(raw_input("vuelve a introducir el orden a aproximar (1,2,3...): "))
+			print "orden escogido: " + str(orden)
+			FuncionNewton.formula(float(xusuario),orden)
+			FuncionNewton.kill()
+		else:
+			print " Los valores de entrada no son constantes, no se puede extrapolar/interpolar por newton"
 
 	elif opcion == 'salir':
 		menu = False;

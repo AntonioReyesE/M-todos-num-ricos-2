@@ -14,7 +14,7 @@ class newton:
 		#Matriz que recibe a partir de archivo leido
 		self.matriz = matriz
 		self.intervalo()
-		self.DiferenciasFinitas()
+		#self.DiferenciasFinitas()
 
 	#Primera forma de calcular las diferencias finitas de la función tabular
 	#Regresa el orden de la función
@@ -24,25 +24,29 @@ class newton:
 		lista.append(self.matriz[0])
 		lista.append(y)
 		igual = self.iguales(y) #Para la primera comparación
+		if igual != False:
+			return False
+		else:
 		
-		#Hasta que todos los valores del arreglo sean iguales
-		k = 0
-		while igual != True:
-			k = k + 1
-			i = 0
-			j = 1
-			resultado = []
-			#resta de los valores de y
-			while j < len(y):
-				resta = float(y[j]) - float(y[i])
-				i = i + 1
-				j = j + 1
-				resultado.append(resta)
-			igual = self.iguales(resultado)
-			y = resultado
-			lista.append(resultado)
-		self.k = k
-		self.lista = lista
+			#Hasta que todos los valores del arreglo sean iguales
+			k = 0
+			while igual != True:
+				k = k + 1
+				i = 0
+				j = 1
+				resultado = []
+				#resta de los valores de y
+				while j < len(y):
+					resta = float(y[j]) - float(y[i])
+					i = i + 1
+					j = j + 1
+					resultado.append(resta)
+				igual = self.iguales(resultado)
+				y = resultado
+				lista.append(resultado)
+			self.k = k
+			self.lista = lista
+			return True
 
 
 	#Función que identifica si todos los elementos de un arreglo son iguales
