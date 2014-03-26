@@ -24,6 +24,7 @@ class newton:
 		lista.append(self.matriz[0])
 		lista.append(y)
 		igual = self.iguales(y) #Para la primera comparación
+		
 		#Hasta que todos los valores del arreglo sean iguales
 		k = 0
 		while igual != True:
@@ -104,7 +105,10 @@ class newton:
 			res = (res * self.lista[j+2][indice]) / math.factorial(j+1)
 			y0 = y0 + res
 			res = 1
-		print y0
+		print ""
+		print " El orden del Polinomio que más se ajusta " + str(self.k)
+		print " El metodo para extrapolar/interpolar usado fue Newton"
+		print " El resultado de la aproximación es "  + str(y0)
 
 	#Función que extrapola según un valor dado válido de acuerdo al intervalo
 	def  extrapolacion(self, xDeseado):

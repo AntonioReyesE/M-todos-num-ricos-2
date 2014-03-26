@@ -4,26 +4,28 @@ from newton import *
 from Lector import *
 
 menu = True;
-print 'Hola, favor de introducir los comandos que desee:'
-print 'para interpopación/extrapolación exacta, escribe "exacto"'
-print 'para interpopación/extrapolación exacta, escribe "aproximado"'
-print 'escribe "salir" para salir del programa'
+print ' Hola, favor de introducir los comandos que desee:'
+print ' Para interpopación/extrapolación exacta, escribe --> "1"'
+print ' Para interpopación/extrapolación aproximada, escribe --> "2"'
+print ' Escribe "salir" para salir del programa'
+print ""
 
+#Creación de clase lector con la direscción del archivo a leer
+lector = Lector("holis.txt") 
+#Creación de objeto newton
+FuncionNewton = newton(lector.lee())
+#validar entrada para ver si se puede ejecutar newton
 
+#print str(validarNewton)
 while menu:
 
 
 	opcion = raw_input(">>>")
 	print opcion
-	if opcion == 'exacto':
+	if opcion == '1':
 		print "exacto"
-	elif opcion == 'aproximado':
-
-    	#Creación de clase lector con la direscción del archivo a leer
-		lector = Lector("holis.txt") 
-
-		#Creación de objeto newton
-		FuncionNewton = newton(lector.lee())
+	elif opcion == '2':
+		
 		xusuario = raw_input("introduce el valor a aproximar: ") 
 		orden = int(raw_input("introduce el orden a aproximar (1,2,3...): "))
 		#validar orden que no sea negativo
@@ -35,9 +37,16 @@ while menu:
 
 	elif opcion == 'salir':
 		menu = False;
+		print " Adios..."
 	else:
 		print "revisa la opción que escogiste"
-
+	if menu:
+		print ""
+		print ("****************************************************************")
+		print ""
+		print ' Para interpopación/extrapolación exacta, escribe --> "1"'
+		print ' Para interpopación/extrapolación aproximada, escribe --> "2"'
+		print ' Escribe "salir" para salir del programa'
 
 
 
