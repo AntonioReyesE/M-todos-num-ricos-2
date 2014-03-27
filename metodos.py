@@ -25,7 +25,9 @@ while menu:
 	opcion = raw_input(">>>")
 	print opcion
 	if opcion == '1':
-		print "exacto"
+		inpu = int(raw_input("introduce el valor a calcular: "))
+		FuncionLagrange.formula(251.0)
+		FuncionLagrange.kill()
 	elif opcion == '2':
 		if FuncionNewton.DiferenciasFinitas() == True:
 			xusuario = raw_input("introduce el valor a aproximar: ") 

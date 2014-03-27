@@ -25,6 +25,7 @@ class newton:
 		lista.append(y)
 		igual = self.iguales(y) #Para la primera comparación
 		if igual != False:
+			print "false"
 			return False
 		else:
 		
@@ -46,6 +47,7 @@ class newton:
 				lista.append(resultado)
 			self.k = k
 			self.lista = lista
+			print "true"
 			return True
 
 
