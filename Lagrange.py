@@ -7,7 +7,7 @@ class Lagrange:
 		self.matriz = matriz;
 	#formula que calcula lagrange, recibe input de usuario	
 	def formula(self, xuser):
-		print xuser
+		#print xuser
 		result = 0
 		
 		
@@ -22,8 +22,11 @@ class Lagrange:
 			num = num * self.matriz[1][i]
 			#print num
 			#print den
-			print num/den
+			#print num/den
 			result = result + (num/den)
 		
 		print result
 		return result
+
+	def kill(self):
+		del self

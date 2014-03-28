@@ -25,7 +25,7 @@ class newton:
 		lista.append(y)
 		igual = self.iguales(y) #Para la primera comparación
 		if igual != False:
-			print "false"
+			#print "false"
 			return False
 		else:
 		
@@ -47,7 +47,7 @@ class newton:
 				lista.append(resultado)
 			self.k = k
 			self.lista = lista
-			print "true"
+			#print "true"
 			return True
 
 
@@ -98,10 +98,11 @@ class newton:
 	def formula(self, xUsuario, orden):
 		
 		k = self.fraccionIntervalo(xUsuario)
+		self.extrapolacion(self.xAnterior) #aqui ta extrapolacion 
 		if(orden<self.k):
 			self.k = orden
 
-		self.extrapolacion(self.xAnterior) #aqui ta extrapolacion 
+		
 		indice = self.lista[0].index(self.xAnterior)
 		res = 1
 		y0 = self.lista[1][indice]

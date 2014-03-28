@@ -4,6 +4,13 @@ from newton import *
 from Lector import *
 from Lagrange import *
 
+def is_number(s):
+    try:
+        float(s)
+        return True
+    except ValueError:
+        return False
+
 menu = True;
 print ' Hola, favor de introducir los comandos que desee:'
 print ' Para interpopación/extrapolación exacta, escribe --> "1"'
@@ -23,13 +30,17 @@ while menu:
 
 
 	opcion = raw_input(">>>")
-	print opcion
+	
 	if opcion == '1':
-		inpu = int(raw_input("introduce el valor a calcular: "))
-		FuncionLagrange.formula(251.0)
+		inpu = (raw_input("introduce el valor a calcular: "))
+		if is_number(inpu):
+
+			FuncionLagrange.formula(float(inpu))
+		else:
+			print "Valor incompatible"
 		FuncionLagrange.kill()
 	elif opcion == '2':
-		if FuncionNewton.DiferenciasFinitas() == True:
+		if FuncionNewton.DiferenciasFinitas() != -1:
 			xusuario = raw_input("introduce el valor a aproximar: ") 
 			orden = int(raw_input("introduce el orden a aproximar (1,2,3...): "))
 			#validar orden que no sea negativo
@@ -37,10 +48,10 @@ while menu:
 				orden = int(raw_input("vuelve a introducir el orden a aproximar (1,2,3...): "))
 			print "orden escogido: " + str(orden)
 			FuncionNewton.formula(float(xusuario),orden)
-			FuncionNewton.kill()
+			
 		else:
 			print " Los valores de entrada no son constantes, no se puede extrapolar/interpolar por newton"
-
+		FuncionNewton.kill()
 	elif opcion == 'salir':
 		menu = False;
 		print " Adios..."
