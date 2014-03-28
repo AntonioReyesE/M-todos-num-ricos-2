@@ -13,13 +13,13 @@ def is_number(s):
 
 menu = True;
 print ' Hola, favor de introducir los comandos que desee:'
-print ' Para interpopación/extrapolación exacta, escribe --> "1"'
-print ' Para interpopación/extrapolación aproximada, escribe --> "2"'
+print ' Para interpopacion/extrapolacion exacta, escribe --> "1"'
+print ' Para interpopacion/extrapolacion aproximada, escribe --> "2"'
 print ' Escribe "salir" para salir del programa'
 print ""
 
 #Creación de clase lector con la direscción del archivo a leer
-lector = Lector("holis.txt") 
+lector = Lector("datos.txt") 
 #Creación de objeto newton
 FuncionNewton = newton(lector.lee())
 FuncionLagrange = Lagrange(lector.lee())
@@ -61,8 +61,8 @@ while menu:
 		print ""
 		print ("****************************************************************")
 		print ""
-		print ' Para interpopación/extrapolación exacta, escribe --> "1"'
-		print ' Para interpopación/extrapolación aproximada, escribe --> "2"'
+		print ' Para interpopacion/extrapolacion exacta, escribe --> "1"'
+		print ' Para interpopacion/extrapolacion aproximada, escribe --> "2"'
 		print ' Escribe "salir" para salir del programa'
 
 

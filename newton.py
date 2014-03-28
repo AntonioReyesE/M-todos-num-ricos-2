@@ -113,9 +113,9 @@ class newton:
 			y0 = y0 + res
 			res = 1
 		print ""
-		print " El orden del Polinomio que más se ajusta " + str(self.k)
+		print " El orden del Polinomio que mas se ajusta " + str(self.k)
 		print " El metodo para extrapolar/interpolar usado fue Newton"
-		print " El resultado de la aproximación es "  + str(y0)
+		print " El resultado de la aproximacion es "  + str(y0)
 
 	#Función que extrapola según un valor dado válido de acuerdo al intervalo
 	def  extrapolacion(self, xDeseado):

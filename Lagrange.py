@@ -25,7 +25,7 @@ class Lagrange:
 			#print num/den
 			result = result + (num/den)
 		
-		print result
+		print "El resultado por Lagrange fue " + str(result)
 		return result
 
 	def kill(self):
